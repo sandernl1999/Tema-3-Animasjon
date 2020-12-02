@@ -1,0 +1,59 @@
+
+/*Miljo-spillet med Lan Marie*/
+body {
+    padding-top: 1.875rem;
+    font-family: Arial;
+    background-color: turquoise;
+    width: 31.25rem;
+    margin: auto;
+    text-align: center;
+}                                           
+
+/*"Antall biler fjernet fra sentrum"*/
+p {
+    font-size: 1.25rem;
+    color: white;
+    display: block;
+    margin: 5px;
+}
+
+/*Tabellen med kategorier og antall trykk*/
+table {
+    margin-top: 0.625rem;
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+/*Listen i tabellen som pakker inn ordene*/
+td {
+    border:1px solid;
+}
+
+/*Scoreboarden som oppdaterer seg ved antall klikk*/
+#numbers {
+    margin: auto;
+    text-align:center;
+    padding-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.9rem;
+    border:5px solid;
+    border-radius:0.625rem;
+    background-color:white;
+    width:12.5rem;
+    height:3.75rem;    
+}
+
+/*Boksen som viser hvilke nivå du er på*/
+#upgradeLevel {
+    margin: auto;
+    text-align:center;
+    padding-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    border:5px solid;
+    border-radius:0.625rem;
+    background-color:lightpink;
+    width:18.75rem;
+    height:3.1rem;    
+}
+     

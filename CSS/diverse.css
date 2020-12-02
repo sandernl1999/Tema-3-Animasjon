@@ -1,0 +1,14 @@
+
+/*Tilpasning av elementer og bakgrunn*/
+*{
+    box-sizing: border-box;
+}
+
+body, html{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ddd;
+    width: 100%;
+    height: 100%;
+}

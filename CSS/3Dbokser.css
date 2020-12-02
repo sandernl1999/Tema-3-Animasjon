@@ -1,0 +1,177 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,900);
+@font-face {
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/*3D-boksene*/
+.container{
+width: 90rem;
+margin-right: auto;
+margin-left: auto;
+margin-top: 14rem;
+}
+
+.wrapper {
+	margin: 0 auto 3rem auto;
+	height: auto;
+	max-width: 60rem;
+	max-height: 86rem;   
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.stage {
+	list-style: none;
+	padding: 0;
+}
+
+/*Listen til de tre boksene*/
+.scene {
+	width: 16.25rem;
+	height: 25rem;
+	margin: 1.875rem;
+	float: left;
+	-webkit-perspective: 62.5rem;
+	-moz-perspective: 62.5rem;
+	perspective: 62.5rem;
+
+}
+
+/* Str på de tre boksene når de snur på seg*/
+.movie {
+	width: 16.25rem;
+	height: 25rem;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transform: translateZ(-8.125rem);
+	-moz-transform: translateZ(-8.125rem);
+	transform: translateZ(-8.125rem);
+	-webkit-transition: -webkit-transform 350ms;
+	-moz-transition: -moz-transform 350ms;
+    transition: transform 350ms;
+
+}
+
+.movie:hover {
+	-webkit-transform: rotateY(-78deg) translateZ(1.25rem);
+	-moz-transform: rotateY(-78deg) translateZ(1.25rem);
+	transform: rotateY(-78deg) translateZ(1.25rem);
+}
+
+/*Boksene når de er snudd*/
+.movie .poster, 
+.movie .info {
+	position: absolute;
+	width: 16.25rem;
+	height: 25rem;
+	background-color: #fff;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.movie .poster  {
+	-webkit-transform: translateZ(8.125rem);
+	-moz-transform: translateZ(8.125rem);
+	transform: translateZ(8.125rem);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+/*Info-teksten på de snudde boksene*/
+.movie .info {
+	-webkit-transform: rotateY(90deg) translateZ(130px);
+	-moz-transform: rotateY(90deg) translateZ(130px);
+	transform: rotateY(90deg) translateZ(130px);
+	border: 1px solid #B8B5B5;
+	font-size: 0.75em;
+}
+
+.info p {
+	padding: 1.2em 1.4em;
+	margin: 2px 0 0;
+	font-weight: 700;
+	color: #666;
+	line-height: 1.4em;
+	border-top: 10px solid #555;
+}
+
+
+/*Bakgrunns-bilde når boksene er snudd*/
+.info header {
+	color: rgb(31, 18, 146);
+	padding: 7px 10px;
+	font-weight: bold;
+	height: 12.2rem;
+	background-size: contain;
+	background-repeat: no-repeat;
+	text-shadow: 0px 1px 1px rgba(0,0,0,1);
+}
+
+/*Boksen for aldersgrense*/
+.info header .rating {
+	border: 1px solid black;
+	padding: 0px 3px;
+}
+
+
+/*Bildene i 3D-boksene*/
+
+.scene:nth-child(1) .movie .poster {
+  background-image: url(../images/bilfritt.jpg)
+}
+
+.scene:nth-child(2) .poster {
+  background-image: url(../images/corona\ 2.jpg)
+}
+
+.scene:nth-child(3) .poster {
+  background-image: url(../images/influence\ 2.jpg); 
+}
+
+.scene:nth-child(1) .info header {
+	background-image: url(../images/Traffic-jam-1\ 2.jpg);
+	height: 12rem;	
+}
+
+.scene:nth-child(2) .info header {
+	background-image: url(../images/corona\ b3.jpg);
+	height: 9.7rem;	
+}
+
+.scene:nth-child(3) .info header {
+	background-image: url(../images/influencer\ b2.jpg);
+	height: 11.1rem;	
+}
+
+/*Media Queries*/
+
+@media screen and (max-width: 60rem){
+	.scene {
+		float: none;
+		margin: 1.875rem auto 3.75rem;
+	}
+}
+@media screen and (max-width: 60rem){
+	.container {
+		float: none;
+		margin-top: 71rem;
+	}
+}
+

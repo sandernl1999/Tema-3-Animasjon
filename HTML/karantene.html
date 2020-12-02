@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/corona.css">
+</head>
+
+<body>
+ 
+<!--Overskrift-->
+<header>
+    <h1 class="coronaskrift">Hjelp parene med å bli gjenforent !
+    </h1>
+  </header>
+  
+  <!--De 20 boksene i memory-spillet-->
+  <section class="main">
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    <div class="box play"></div>
+    
+    <!--Scoreboard og tiden som er brukt-->
+    <div id="state">
+      <span id="time">0</span>
+      <span id="score">0</span>
+    </div>
+  </section>
+  
+<!--En liten under-overskrift, om hvilke skole oppgaven er fra-->
+  <footer>
+    <p>Fagskolen <a href="" target="_blank">Tema 3</a></p>
+  </footer>
+  
+  <!--Velge hvilke tema spillet skal handle om-->
+  <section id="pre" class="">
+    <div id="themes">
+      Velg tema !
+      <p id="pokemon" class="themes" title="Pokemon">Kjendiser</p>
+    </div>
+  </section>
+  
+  <!--Valg og beskjed du får når spillet er ferdig-->
+  <section id="post" class="hidden">
+    <div>
+      <p>Imponerende !</p>
+      <p id="final"></p>
+      <br>
+      <p>
+        <a id="again">Spill igjen !</a>
+      </p>
+    </div>
+  </section>
+
+<!--Javascript memory-spillet, lagt direkte inn i html med <script>-->
+
+  <script>
+
+//Bilder hentet gjennom cloudinary//
+var library = {
+    pokemon: [
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721029/becks_zaucu6.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721029/becks_zaucu6.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721276/jenner_tlss9g.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721276/jenner_tlss9g.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721258/duke_ycdddc.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721258/duke_ycdddc.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721247/timbers_ndil24.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721247/timbers_ndil24.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721233/kimye_j21ckr.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721233/kimye_j21ckr.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721213/chapraaa_aqptdu.png',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721213/chapraaa_aqptdu.png',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721198/bey_jdwgd4.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721198/bey_jdwgd4.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721170/lively_xmn82a.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721170/lively_xmn82a.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721157/blooms_co2e1w.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721157/blooms_co2e1w.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721142/biebers_yz5376.jpg',
+      'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721142/biebers_yz5376.jpg',
+    ],
+      }
+
+  //Instillinger for scoreboard og valg underveis//
+  var images = [],
+      tempElt1 = "",
+      tempElt2 = "",
+      click = -1,
+      win = 0,
+      score = 0,
+      time = 0;
+  
+  var preElt = document.querySelector("#pre"),
+      themesElt = document.querySelector("#themes"),
+      boxElts = document.getElementsByClassName("box"),
+      mainElt = document.querySelector(".main"),
+      timeElt = document.querySelector("#time"),
+      scoreElt = document.querySelector("#score"),
+      postElt = document.querySelector("#post"),
+      finalElt = document.querySelector("#final"),
+      againElt = document.querySelector("#again");
+  
+  
+  // Start spillet med et valgt tema//
+  themesElt.addEventListener("click", function(e) {
+    if (e.target.classList.contains("themes")) {
+      activateTheme(e.target.id);
+      preElt.classList.add("hidden");
+    }
+  });
+  
+  function activateTheme(theme) {
+    // insert theme in images array
+    switch (theme) {
+      case "pokemon":
+        for (let i=0; i<20; i++) {images.push(library.pokemon[i]);}
+        break;
+     
+    }
+    // Legge inn bildene
+    for (let i=0; i<20; i++) {
+      var rand = Math.floor(Math.random() * (images.length-1));
+      boxElts[i].innerHTML = "<img src='" + images[rand] + "' alt='image' class='hidden'>";
+      images.splice(rand, 1);
+    }
+  }
+  
+  
+  // Handle the play
+  mainElt.addEventListener("click", gameLogic);
+  
+  function gameLogic(e) {
+    // make sure the box is playable
+    if (e.target.classList.contains("play")) {
+      e.target.firstChild.classList.remove("hidden");
+      // first of two click
+      if (click < 1) {
+        tempElt1 = e.target;
+        // timer
+        if (click === -1) {
+          timer = setInterval(function() {
+            time++;
+            timeElt.innerHTML = time;
+          }, 1000);
+        }
+        click = 1;
+      }
+  
+      // second click, klikk nr 2//
+      else if (e.target !== tempElt1) {
+        tempElt2 = e.target;
+  
+        // different images, forskjellige bilder
+        if (tempElt1.firstChild.src !== tempElt2.firstChild.src) {
+          mainElt.removeEventListener("click", gameLogic);
+          setTimeout( function() {
+            tempElt1.firstChild.classList.add("hidden");
+            tempElt2.firstChild.classList.add("hidden");
+            mainElt.addEventListener("click", gameLogic);
+          }, 400);
+          if (score > 0){
+            score -= 2;
+          }
+          scoreElt.innerHTML = score;
+        }
+  
+        // same images, samme bilde//
+        else {
+          score += 10;
+          win += 12;
+          tempElt1.firstChild.classList.add("outlined");
+          tempElt2.firstChild.classList.add("outlined");
+          tempElt1.classList.remove("play");
+          tempElt2.classList.remove("play");
+          scoreElt.innerHTML = score;
+  
+          // game won, spill vunnet
+          if (win === 20) {
+            clearTimeout(timer);
+            finalElt.innerHTML = "You won " + score + " points <br> in " + time + " seconds ";
+            postElt.classList.remove("hidden");
+          }
+        }
+        click = 0;
+      }
+    }
+  }
+  
+  againElt.addEventListener("click", resetGame);
+  
+  function resetGame() {
+    // reset game, start spill på nytt//
+    tempElt1 = "";
+    tempElt2 = "";
+    click = -1;
+    win = 0;
+    score = 0;
+    time = 0;
+    postElt.classList.add("hidden");
+    preElt.classList.remove("hidden");
+    for (let i=0; i<20; i++) {
+      boxElts[i].classList.add("play");
+      boxElts[i].firstChild.classList.add("hidden");
+    }
+    timeElt.textContent = time;
+    scoreElt.textContent = score;
+  }
+  
+  </script>
+  
+</body>
+</html>
