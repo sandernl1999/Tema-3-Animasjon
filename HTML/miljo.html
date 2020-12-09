@@ -1,5 +1,7 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <link rel="stylesheet" href="../CSS/miljo.css">
         <script src="../JS/miljo.js"></script>
     </head>
@@ -8,11 +10,11 @@
         <!--Overskrift-->
         <h1 class="lan">Hjelp Lan med å fjerne biler fra sentrum!</h1>
         <div id = "space"></div>
-        <div id = "cookie" onclick="cookieClick()">
+        <button id = "miljo" onclick="miljoClick()" tabindex="0">
             <!--Bilde av Lan og bilen-->
             <img src="../images/q8.webp" width="200px"/>
             <img src="../images/lan-marie-nguyen-berg-web.png" width="150px"/>
-        </div>
+        </button>
         
         <!--Oversikt over antall og nivået man har nådd-->
         <p>Antall biler fjernet:</p>
@@ -34,7 +36,7 @@
             
             <tr>
                 <td>Tesla-eier</td>
-                <td>Hvit mann i 50 årene med helt ny Tesla</td>
+                <td>Hvit mann, 50 år, ny Tesla</td>
                 <td> 30 trykk!</td>
             </tr>
             

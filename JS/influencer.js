@@ -2,10 +2,11 @@
 //Ord du skal gjette med de ulike hintene//
 var word = [["Restylane", "Noe mange putter i leppene."], ["Paradise Hotel", "Reality-serie som gjør influencere kjente."], ["kokain", "Noe influencere tar før de drar til solli-plass."], ["Smittevern", "Noe influencere ikke bryr seg om"], ["Janteloven", "Noe influencere ikke bryr seg om."], ["Markedsføringsloven", "Noe man ikke følger."], ["Skrive bok", "Noe mange influencere gjør"], ["Betakaroten", "Noe mange influencere er sponset av." ]]
 
-// Spill tastatur-alfabet
-var tastatur = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+// Spill, tastatur-alfabet, Engelske-alfabet
+var tastatur = "ABCDEFGHIJKLMNOPQRSTUVWXYZØ"
 
-// Game memory//
+// Hangman-spill//
+
 var select = 0
 var wordLeft = []
 var fail = 0
@@ -41,7 +42,7 @@ function newGame() {
     createWord()
 }
 
-// Clear keyboard
+// Clear Tastatur
 function clearTastatur() {
     var e = document.getElementsByClassName("b")
     for(a = 0; a < e.length; a++) {
@@ -89,7 +90,7 @@ function createWord() {
     }
 }
 
-// Create keyboard
+// Lage Tastatur
 function createTastur() {
     var tas = gId("keybord")
     tas.innerHTML = ""

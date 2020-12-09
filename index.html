@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="./CSS/index.css">
     <link rel="stylesheet" href="./CSS/diverse.css">
     <link rel="stylesheet" href="./CSS/3Dbokser.css">
-    <link rel="stylesheet" href="background.css">
     <link rel="stylesheet" href="./CSS/search.css">
-    <script src="./JS/index.js"></script>
+    <script src="/JS/overskrift.js"></script>
    
 </head>
 
@@ -21,20 +20,33 @@ width: 100%;
 height: auto;
 animation: gradient 10s ease infinite">
 
-<!--Animert overskrift-->
-   <div class="loading">
-      <span>Lese-pause?</span>
+<!--Animert figur-->   
+<a class="animated" href="./HTML/om.html" target="_blank" ><div class="animated"></div></a>
+    <div class="buttons">
+    <button type="button" class="play-animation">Start</button>
+    <button type="button" class="stop-animation">Stopp</button>
     </div>
-
+    
+  <!--Animert figur, JS-->  
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+       $(document).ready(function(){
+            $(".play-animation").click(function(){
+             $(".animated").css("animation-play-state", "running");
+              });
+              $(".stop-animation").click(function(){
+                  $(".animated").css("animation-play-state", "paused");
+              });
+          });
+      </script> 
+     
     <!--Søke ikon boks til høyre på forsiden-->
     <div class="flexbox">
       <div class="search">
         <div>
-          <input type="text" placeholder="Søk . . ." required>
+        <input type="text" placeholder="Søk . . ."  required>
         </div>
       </div>
-    </div>
-
 <!--3D boksene 3stk på Hjem-siden-->
 <div class="container">
   
@@ -96,9 +108,8 @@ animation: gradient 10s ease infinite">
 
     <!--Burger meny-->
     <div class="wrapper">
-        <input type="checkbox" id="navigation" />
-        <label for="navigation">
-         
+        <input type="checkbox" id="navigation"/> 
+        <label for="navigation" role="button">
            <svg version="1.1" id="chips" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               width="71.282px" height="56px" viewBox="0 0 71.282 56" enable-background="new 0 0 71.282 56" xml:space="preserve">
               <path id="chip-no-sauce" fill="#FFDE5E" stroke="#F2C335" stroke-miterlimit="10" d="M4.885,21.828c0,0,22.319,2,31.535,2c9.159,0,31.535-2,31.535-2
@@ -131,7 +142,7 @@ animation: gradient 10s ease infinite">
               </g>
            </svg>
            <!--Burger-->
-           <svg version="1.1" id="burger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
               width="92.875px" height="60.819px" viewBox="0 0 92.875 60.819" enable-background="new 0 0 92.875 60.819" xml:space="preserve">
               <g class="bun">
                  <path fill="#FFE797" stroke="#414042" stroke-miterlimit="10" d="M86.174,26.508V16.206C86.174,7.532,68.383,0.5,46.438,0.5
@@ -218,14 +229,17 @@ animation: gradient 10s ease infinite">
                  c0,0.522,0.423,0.945,0.945,0.945c0.521,0,0.945-0.423,0.945-0.945v-0.944c0-0.01-0.005-0.018-0.006-0.028h56.359
                  c0,0.01-0.006,0.018-0.006,0.028v2.777c0,0.522,0.424,0.945,0.945,0.945s0.945-0.423,0.945-0.945v-2.777
                  c0-0.01-0.006-0.019-0.006-0.028h11.529h0.002c0,0,0.001,0,0.002,0C87.716,27.548,88.376,26.896,88.376,26.092z"/>
-           </svg>
-        </label>
+         </svg>
+   
+      </label>
+
 
       <!--Hurtiglinker i burger-menyen-->
-        <nav>
+      
+       <nav>
            <ul>
               <li>
-                 <a class="hjem" href=""><i class='fa fa-coffee'></i>Hjem</a>
+                 <a class="hjem" href=""><i class='fa fa-coffee' aria-hidden="true"></i>Hjem</a>
               </li>
               <li>
                  <a class="spill" href=""><i class='fa fa-map-maker'></i>Spill:</a>
@@ -242,10 +256,8 @@ animation: gradient 10s ease infinite">
                  <a class="om" href="./HTML/om.html" target="_blank"><i class='fa fa-map-maker'></i>Om</a>
               </li>
          
-
            </ul>
-           </nav>
-
+           
    
 </body>
 </html>

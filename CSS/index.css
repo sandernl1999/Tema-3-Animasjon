@@ -10,27 +10,6 @@
 	100% {
 		background-position: 0% 50%;
   }
-
-}
-
-/*Aldersgrensene*/
-.rating{
-  color: black;
-  font-size: 1.5rem;
-}
-
-/*Navnene på de ulike spillene*/
-.poster{
-  color: white;
-  padding-left: 2.6rem;
-  padding-top: 25rem;
-  position: absolute;
-  transform: translate(50%,-50%);
-  text-transform: uppercase;
-  font-family: verdana;
-  font-size: 1em;
-  font-weight: 700;
-  
 }
 
 /*Hurtiglinkene man finner ved å trykke på burger-menyen*/
@@ -54,7 +33,7 @@ nav{
     position:fixed;
     top:0;
     left:0;
-    width:15.6rem;
+    width:15.6em;
     height:100%;
     margin:0 0 0 -15.6rem;
     -webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
@@ -63,11 +42,40 @@ nav{
         transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
 }
 
+input[type="checkbox"]{
+  display:none;
+}
+input[type="checkbox"]:checked ~ nav{
+  margin:0 0 0 -3.125em;
+}
+input[type="checkbox"]:checked ~ label{
+  left:6.9em;
+}
+input[type="checkbox"]:checked ~ section{
+  -webkit-transform:translate3d(210px, 0, 0);
+  -moz-transform:translate3d(210px, 0, 0);
+  -o-transform:translate3d(210px, 0, 0);
+  transform:translate3d(210px, 0, 0);
+}
+svg {
+transform: scale(1.1);
+}
+
+
+@media only screen and (max-width: 40em){
+  svg{
+    width: 2em;
+    height: 2em;
+  
+  }
+}
+
+
 /*Menyen som dukker opp ved å trykke på burgeren, beige bakgrunn*/
 nav ul{
-    width:13.75rem;
+    width:12.75em;
     height:100%;
-    padding:0 0 0 3.125rem;
+    padding:0 0 0 2.125em;
     margin:0;
     list-style:none;
     background:#FFF9A5;
@@ -80,7 +88,7 @@ nav li{
 /*Teksten i menyen*/
 nav a{
     color:#484A56;
-    font-size:1em;
+    font-size:1rem;
     font-family:'Montserrat', helvetica, arial, sans-serif;
     font-weight: 400;
     text-decoration:none;
@@ -98,37 +106,19 @@ label{
     display:block;
     font-family:'helvetica neue', helvetica, arial, sans-serif;
     font-weight:700;
-    line-height:2.625rem;
+    line-height:2.625em;
     color: #fff;
     text-align:center;
-    font-size:2em;
+    font-size:2rem;
     line-height:1.1em;
     position: absolute;
-    top:2.8rem;
-    left:3.2rem;
+    top:1.5em;
+    left:1.6em;
     -webkit-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
    -moz-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
      -o-transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550); 
         transition: all 400ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
     z-index:500;
-}
-input[type="checkbox"]{
-    display:none;
-}
-input[type="checkbox"]:checked ~ nav{
-    margin:0 0 0 -3.125rem;
-}
-input[type="checkbox"]:checked ~ label{
-    left:16.9rem;
-}
-input[type="checkbox"]:checked ~ section{
-    -webkit-transform:translate3d(210px, 0, 0);
-    -moz-transform:translate3d(210px, 0, 0);
-    -o-transform:translate3d(210px, 0, 0);
-    transform:translate3d(210px, 0, 0);
-}
-svg {
-  transform: scale(1.5);
 }
 
 /*Hurtiglinkene i burger-menyen, farge og plassering*/
@@ -139,78 +129,67 @@ svg {
   
 /*venstre burger-meny */
 
-
+/*Plassering av lagene i burgeren, innmaten*/
 #chips {
   position: absolute;
-  margin-left: -30px;
-  margin-top: 15px;
+  margin-left: -11em;
+  margin-top: 0.94em;
   
 }
 #burger {
   display:block;
 }
 
-/*Overskrift animasjon*/
-  
-body {background:#f3efe8;}
-
-/*Plassering*/
-.loading {
-  font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;
-  text-transform:uppercase;
+/*Animert figur*/
+.animated {
   position: absolute;
-  padding-left: 0.6rem;
-  top: 11rem;
-  width:7.5rem;
-  line-height:3.125rem;
-  transform:translateY(-50%);
+  margin-top: -15em;
+  height: 5em;
+  width: 8em;
+  font-size: 2rem;
+  background: url("/images/Mike_Wazowski.png") no-repeat left center transparent;  
+  background-size: 30%;
+  -webkit-animation: test 4s infinite;
+  animation: test 4s infinite;
 }
 
-.loading span {
-  position:relative;
-  z-index:999;
-  color:#fff;
+@media only screen and (max-width: 40em){
+  .animated{
+    background-size: 20%;
+    margin-top: -13.5em ;
+  }
+}
+/*Start og stopp, felles*/
+.buttons{
+ position: absolute;
+ padding-top: 2em;
+ margin-left: 2em;
+ margin-top: -23em;
+ width: 8em;
 }
 
-/*Horisontale rektangelet som flytter på seg*/
-.loading:before {
-  content:'';
-  background: rgb(0, 255, 170);
-  width:8rem;
-  height:2.25rem;
-  display:block;
-  position: relative;;
-  top:0;left:0;right:0;bottom:0;
-  margin:auto;
-  animation:2s loadingBefore infinite ease-in-out;
+/*Start*/
+.play-animation{
+ color: #fff;
+ background-color: rgb(38, 172, 38);
+ padding: 0.3em;
+ border: 2px solid rgb(226, 219, 219);
+ border-radius: 5%;
+}
+/*Stopp*/
+.stop-animation{
+ color: #fff;
+ background-color: rgb(219, 61, 74);
+ padding: 0.3em;
+ border: 2px solid rgb(226, 219, 219);
+ border-radius: 5%;
 }
 
-@keyframes loadingBefore {
-  0%   {transform:translateX(-14px);}
-  50%  {transform:translateX(14px);}
-  100% {transform:translateX(-14px);}
+@-webkit-keyframes test {
+  50% {background-position: right center;}
 }
 
-/*Vertikale rektangelen som flytter på seg*/
-.loading:after {
-  content:'';
-  background:#FFF9A5;
-  width:1rem;
-  height:3.75rem;
-  display:block;
-  position: absolute;;
-  top:0;left:0;right:0;bottom:0;
-  margin:auto;
-  opacity:.5;
-  
-  animation:2s loadingAfter infinite ease-in-out;
+@keyframes test {
+  50% {background-position: right center;}
 }
-
-@keyframes loadingAfter {
-  0%   {transform:translateX(-50px);}
-  50%  {transform:translateX(50px);}
-  100% {transform:translateX(-50px);}
-}
-
-
 

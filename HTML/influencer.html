@@ -3,7 +3,9 @@
 <html t="0x31" i="YA-9517" v="1.60">
     <!--Hangman/influencer-spillet-->
     <head>
+        <meta charset="UTF-8">
         <title>Hangman (spill)</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <link rel="stylesheet" href="../CSS/influencer.css">
         <script src="../JS/influencer.js"></script>
     </head>
@@ -11,7 +13,7 @@
         <!--Velkomst-side-->
         <div id="home">
             <div class="title">Redd influenceren!</div>
-            <div class="button anim" onclick="startGame()">Spill nå!</div>
+            <button class="button anim" tabindex="0" onclick="startGame()">Spill nå!</button>
         </div>
 
         <!--Selve spillet-->
@@ -21,7 +23,7 @@
         <div id="result" class="h">
             <div class="title" id="rT"></div>
             <div class="body" id="rM"></div>
-            <div class="button anim" onclick="startGame()">Prøve igjen?</div>
+            <button class="button anim" tabindex="0" onclick="startGame()">Prøve igjen?</button>
         </div>
 
         <!--Spillet-->
@@ -41,8 +43,8 @@
                 <div class="ground" data="false" id="g0"></div>
                 <div class="hintButton" data="false" id="hintButton" onclick="hint()">?</div>
             </div>
-            <!--Inntastings-tastatur, det norske alfabetet-->
-            <div id="tastatur">
+            <!--Inntastings-tastatur, det engelske alfabetet-->
+            <div id="tastatur" tabindex="0">
                 <div id="moveKeybord"><div class="marg"></div></div>
                 <div id="keybord"></div>
             </div>

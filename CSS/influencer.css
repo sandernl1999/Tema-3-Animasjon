@@ -55,7 +55,7 @@ body {
     box-shadow: 0 0 0 4px rgb(8, 8, 8);
     display: table;
     font-weight: bold;
-    padding: 0.625rem 1.25rem;
+    padding: 0.625em 1.25em;
     margin: 5% auto;
 }
 
@@ -102,7 +102,7 @@ body {
 /*Bodyen etter resultatet kommer*/
 #result .body {
     color: #fff;
-    margin-top: 1.9rem;
+    margin-top: 1.9em;
     text-align: center;
     text-shadow: 1px 1px 0 #000;
 }
@@ -119,16 +119,16 @@ body {
     box-shadow: 0 0 0 5px rgb(8, 8, 8);
     display: table;
     font-weight: bold;
-    padding: 0.625rem 1.25rem;
-    margin: 2.5rem auto;
+    padding: 0.625em 1.25em;
+    margin: 2.5em auto;
     margin-bottom: 0;
 }
 
 /*Bokstavene som dukker opp øverst når du trykker på riktig bokstaver i spillet*/
 #letter {
     font-size: 1.4rem;
-    height: 1.9rem;
-    margin: 1.25rem;
+    height: 1.9em;
+    margin: 1.25em;
     text-align: center;
 }
 
@@ -137,32 +137,33 @@ body {
     box-shadow: 0 3px 0 -1px #555;
     display: inline-block;
     margin: 1px;
-    height: 1.25rem;
+    height: 1.25em;
     text-transform: uppercase;
-    width: 1.25rem;
+    width: 1.25em;
 }
 
 .ls {
     box-shadow: 0 0 0 0 #555;
-    width: 0.625rem;
+    width: 0.625em;
 }
 
 /*Posisjonering av spillet*/
 #game {
-    height: 15.6rem;
+    height: 15.6em;
     margin: auto;
     position: relative;
-    width: 14rem;
+    width: 14em;
 }
 
 #game .player {
-    left: 3.3rem;
+    left: 3.3em;
     position: absolute;
-    top: 5.625rem;
-    height: 8.1rem;
-    width: 4.7rem;
+    top: 5.625em;
+    height: 8.1em;
+    width: 4.7em;
 }
 
+/*PlayerModel*/
 .player .playerModel {
     height: 100%;
     position: relative;
@@ -172,9 +173,9 @@ body {
 .playerModel .head {
     border-radius: 50%;
     box-shadow: 0 0 0 2px #000 inset;
-    height: 2.2rem;
+    height: 2.2em;
     margin: auto;
-    width: 2.2rem;
+    width: 2.2em;
 }
 
 .playerModel .head[data="false"] {
@@ -183,7 +184,7 @@ body {
 
 .playerModel .body {
     background-color: #000;
-    height: 2.8rem;
+    height: 2.8em;
     margin: auto;
     width: 2px;
 }
@@ -196,7 +197,7 @@ body {
     background-color: #000;
     content: "";
     display: inline-block;
-    height: 1.875rem;
+    height: 1.875em;
     position: absolute;
     width: 2px;
 }
@@ -206,13 +207,13 @@ body {
 }
 
 .playerModel .body:before {
-    left: 1.7rem;
+    left: 1.7em;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
 
 .playerModel .body:after {
-    right: 1.7rem;
+    right: 1.7em;
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
 }
@@ -232,7 +233,7 @@ body {
     background-color: #000;
     content: "";
     display: inline-block;
-    height: 2.5rem;
+    height: 2.5em;
     position: absolute;
     width: 2px;
 }
@@ -242,24 +243,25 @@ body {
 }
 
 .playerModel .foot:before {
-    left: 1.9rem;
+    left: 1.9em;
     transform: rotate(20deg);
     -webkit-transform: rotate(20deg);
 }
 
 .playerModel .foot:after {
-    right: 1.9rem;
+    right: 1.9em;
     transform: rotate(-20deg);
     -webkit-transform: rotate(-20deg);
 }
 
 
+/*Stang*/
 #game .stang3 {
     background-color: #000;
-    height: 1.25rem;
-    left: 5.6rem;
+    height: 1.25em;
+    left: 5.6em;
     position: absolute;
-    top: 4.4rem;
+    top: 4.4em;
     width: 2px;
 }
 
@@ -270,23 +272,23 @@ body {
 #game .stang2 {
     background-color: #000;
     border-radius: 5px 0 0 5px;
-    bottom: 11.25rem;
+    bottom: 11.25em;
     height: 5px;
     position: absolute;
-    right: 2.8rem;
-    width: 5.9rem;
+    right: 2.8em;
+    width: 5.9em;
 }
 
 #game .stang2:before {
     background-color: #000;
     content: "";
-    left: 3.1rem;
+    left: 3.1em;
     height: 5px;
     position: absolute;
     top: 1rem;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    width: 3.1rem;
+    width: 3.1em;
 }
 
 #game .stang2[data="false"] {
@@ -296,10 +298,10 @@ body {
 #game .stang {
     background-color: #000;
     bottom: 0;
-    height: 11.25rem;
+    height: 11.25em;
     margin: auto;
     position: absolute;
-    right: 2.8rem;
+    right: 2.8em;
     width: 5px;
 }
 
@@ -307,6 +309,7 @@ body {
     display: none;
 }
 
+/*Ground*/
 #game .ground {
     background-color: #000;
     border-radius: 5px;
@@ -316,13 +319,14 @@ body {
     margin: auto;
     position: absolute;
     right: 0;
-    width: 13.75rem;
+    width: 13.75em;
 }
 
 #game .ground[data="false"] {
     display: none;
 }
 
+/*hintButton*/
 #game .hintButton {
     background: #ccc;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
@@ -343,27 +347,6 @@ body {
     display: none;
 }
 
-/*Tastaturet på bunnen*/
-#tastatur {
-    background-color: rgba(238, 238, 238, 0.9);
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    margin-bottom: 20px;
-    max-width: 31.25rem;
-    padding: 0 1rem;
-    position: absolute;
-    right: 0;
-    text-align: center;
-}
-
-#moveKeybord {
-    padding: 1rem;
-}
-
-.marg {
-    border-bottom: solid 2px #ccc;
-}
 
 /*Hint boksen*/
 #hint {
@@ -372,11 +355,11 @@ body {
     display: none;
     left: 0;
     margin: auto;
-    margin-top: 4.7rem;
+    margin-top: 4.7em;
     position: absolute;
     right: 0;
     top: 0;
-    width: 15.6rem;
+    width: 15.6em;
 }
 
 /*Beskjed-området som dukker opp ved å trykke på hint*/
@@ -402,14 +385,36 @@ body {
     font-weight: bold;
     padding: 8px 12px;
     position: absolute;
-    right: -1rem;
-    top: -1rem;
+    right: -1em;
+    top: -1em;
 }
 
 #hint .body {
     background-color: #ddd;
     border-radius: 0 0 2px 2px;
-    padding: 0.625rem;
+    padding: 0.625em;
+}
+
+/*Tastaturet på bunnen*/
+#tastatur {
+    background-color: rgba(238, 238, 238, 0.9);
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    margin-bottom: 1.25em;
+    max-width: 31.25em;
+    padding: 0 1em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+}
+
+#moveKeybord {
+    padding: 1em;
+}
+
+.marg {
+    border-bottom: solid 2px #ccc;
 }
 
 .b {
@@ -422,9 +427,9 @@ body {
     box-shadow: 1px 1px 1px 0 #ccc;
     display: inline-block;
     margin: 2px;
-    padding: 0.5rem;
+    padding: 0.5em;
     text-align: center;
-    width: 1.6rem;
+    width: 1.6em;
 }
 
 .b[data="false"], .b[data="true"] {
@@ -439,6 +444,7 @@ body {
 .b[data="false"] {
     background: #aaa;
 }
+
 
 .anim {
     animation: button 3s infinite;

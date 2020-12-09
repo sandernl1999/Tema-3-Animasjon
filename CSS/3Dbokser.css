@@ -12,17 +12,18 @@
 
 /*3D-boksene*/
 .container{
-width: 90rem;
+position: relative;
+width: 60em;
 margin-right: auto;
 margin-left: auto;
-margin-top: 14rem;
+margin-top: 15em;
 }
 
 .wrapper {
-	margin: 0 auto 3rem auto;
+	margin: 0 auto 3em auto;
 	height: auto;
-	max-width: 60rem;
-	max-height: 86rem;   
+	max-width: 60em;
+	max-height: 86em;   
 }
 
 .clearfix:before,
@@ -40,22 +41,42 @@ margin-top: 14rem;
 	padding: 0;
 }
 
+/*Aldersgrensene*/
+.rating{
+	color: white;
+	font-size: 1.5rem;
+  }
+  
 /*Listen til de tre boksene*/
 .scene {
-	width: 16.25rem;
-	height: 25rem;
-	margin: 1.875rem;
+	width: 16.25em;
+	height: 25em;
+	margin: 1.875em;
 	float: left;
-	-webkit-perspective: 62.5rem;
-	-moz-perspective: 62.5rem;
-	perspective: 62.5rem;
+	-webkit-perspective: 62.5em;
+	-moz-perspective: 62.5em;
+	perspective: 42.5em;
 
 }
 
+/*Navnene på de ulike spillene*/
+.poster{
+	color: white;
+	padding-left: 2.6em;
+	padding-top: 25em;
+	position: absolute;
+	transform: translate(50%,-50%);
+	text-transform: uppercase;
+	font-family: verdana;
+	font-size: 1rem;
+	font-weight: 700;
+	
+  }
+
 /* Str på de tre boksene når de snur på seg*/
 .movie {
-	width: 16.25rem;
-	height: 25rem;
+	width: 17.25em;
+	height: 25em;
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
@@ -65,13 +86,12 @@ margin-top: 14rem;
 	-webkit-transition: -webkit-transform 350ms;
 	-moz-transition: -moz-transform 350ms;
     transition: transform 350ms;
-
 }
 
 .movie:hover {
-	-webkit-transform: rotateY(-78deg) translateZ(1.25rem);
-	-moz-transform: rotateY(-78deg) translateZ(1.25rem);
-	transform: rotateY(-78deg) translateZ(1.25rem);
+	-webkit-transform: rotateY(-78deg) translateZ(1.25em);
+	-moz-transform: rotateY(-78deg) translateZ(1.25em);
+	transform: rotateY(-78deg) translateZ(1.25em);
 }
 
 /*Boksene når de er snudd*/
@@ -87,20 +107,20 @@ margin-top: 14rem;
 }
 
 .movie .poster  {
-	-webkit-transform: translateZ(8.125rem);
-	-moz-transform: translateZ(8.125rem);
-	transform: translateZ(8.125rem);
+	-webkit-transform: translateZ(8.125em);
+	-moz-transform: translateZ(8.125em);
+	transform: translateZ(8.125em);
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
 /*Info-teksten på de snudde boksene*/
 .movie .info {
-	-webkit-transform: rotateY(90deg) translateZ(130px);
-	-moz-transform: rotateY(90deg) translateZ(130px);
-	transform: rotateY(90deg) translateZ(130px);
+	-webkit-transform: rotateY(90deg) translateZ(8.125em);
+	-moz-transform: rotateY(90deg) translateZ(8.125em);
+	transform: rotateY(90deg) translateZ(8.125em);
 	border: 1px solid #B8B5B5;
-	font-size: 0.75em;
+	font-size: 0.75rem;
 }
 
 .info p {
@@ -118,7 +138,7 @@ margin-top: 14rem;
 	color: rgb(31, 18, 146);
 	padding: 7px 10px;
 	font-weight: bold;
-	height: 12.2rem;
+	height: 12.2em;
 	background-size: contain;
 	background-repeat: no-repeat;
 	text-shadow: 0px 1px 1px rgba(0,0,0,1);
@@ -126,7 +146,7 @@ margin-top: 14rem;
 
 /*Boksen for aldersgrense*/
 .info header .rating {
-	border: 1px solid black;
+	border: 2px solid black;
 	padding: 0px 3px;
 }
 
@@ -162,16 +182,20 @@ margin-top: 14rem;
 
 /*Media Queries*/
 
-@media screen and (max-width: 60rem){
+@media screen and (max-width: 60em){
 	.scene {
 		float: none;
-		margin: 1.875rem auto 3.75rem;
+		margin: 1.875em auto 3.75em;
 	}
 }
-@media screen and (max-width: 60rem){
+@media screen and (max-width: 60em){
 	.container {
 		float: none;
-		margin-top: 71rem;
+		margin-top: 71em;
+		width: 100%;
+
 	}
 }
+
+
 

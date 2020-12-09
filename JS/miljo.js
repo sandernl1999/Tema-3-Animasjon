@@ -1,36 +1,36 @@
 
 var num = 0;
 
-var cookie = document.getElementById("cookie");
+var miljo = document.getElementById("miljo");
 
-function cookieClick() { 
+function miljoClick() { 
     num += 1;
 
     var numbers = document.getElementById("numbers");
     
-    //upgrade level for printing
+    //upgradeLevel nytt nivå
     var upgradeLevel = document.getElementById("upgradeLevel");
     
     numbers.innerHTML = num;      
-    //Tesla eier
+    //Tesla eier-nivå
     if(num >= 30 ){
         num += 1;
         upgradeLevel.innerHTML = "Mann 50 år med ny Tesla";
     }
 
-    //NTNU-student
+    //NTNU-student-nivå
     if(num >= 50 ){
         num += 1;
         upgradeLevel.innerHTML = "NTNU-student på bysykkel";
     }
 
-    //Byråd
+    //Byråd-nivå
     if(num >= 100) {
         num += 1;
         upgradeLevel.innerHTML = "Lan-Marie Berg Eriksen";
     }
 
-    //Greta
+    //Greta-nivå
     if(num >= 200) {
         num += 1;
         upgradeLevel.innerHTML = "Greta Thunberg";

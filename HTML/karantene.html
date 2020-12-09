@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <link rel="stylesheet" href="../CSS/corona.css">
 </head>
 
@@ -16,27 +16,27 @@
   
   <!--De 20 boksene i memory-spillet-->
   <section class="main">
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    <div class="box play"></div>
-    
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+    <button class="box play" tabindex="0"></button>
+  
     <!--Scoreboard og tiden som er brukt-->
     <div id="state">
       <span id="time">0</span>
@@ -53,7 +53,7 @@
   <section id="pre" class="">
     <div id="themes">
       Velg tema !
-      <p id="pokemon" class="themes" title="Pokemon">Kjendiser</p>
+      <button id="kjendiser" class="themes" tabindex="1" onclick="clickClick" title="kjendiser">Kjendiser</button>
     </div>
   </section>
   
@@ -73,9 +73,9 @@
 
   <script>
 
-//Bilder hentet gjennom cloudinary//
+//Bilder hentet gjennom nettstedet cloudinary//
 var library = {
-    pokemon: [
+    kjendiser: [
       'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721029/becks_zaucu6.jpg',
       'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721029/becks_zaucu6.jpg',
       'https://res.cloudinary.com/dy3x5jatc/image/upload/v1605721276/jenner_tlss9g.jpg',
@@ -99,7 +99,7 @@ var library = {
     ],
       }
 
-  //Instillinger for scoreboard og valg underveis//
+  //Instillinger/valg for scoreboard og valg underveis//
   var images = [],
       tempElt1 = "",
       tempElt2 = "",
@@ -108,9 +108,11 @@ var library = {
       score = 0,
       time = 0;
   
+      //funksjonene som skal brukes videre i koden
   var preElt = document.querySelector("#pre"),
       themesElt = document.querySelector("#themes"),
-      boxElts = document.getElementsByClassName("box"),
+      boxElts = 
+      document.getElementsByClassName("box"),
       mainElt = document.querySelector(".main"),
       timeElt = document.querySelector("#time"),
       scoreElt = document.querySelector("#score"),
@@ -128,10 +130,10 @@ var library = {
   });
   
   function activateTheme(theme) {
-    // insert theme in images array
+    // Legge inn tema i images array
     switch (theme) {
-      case "pokemon":
-        for (let i=0; i<20; i++) {images.push(library.pokemon[i]);}
+      case "kjendiser":
+        for (let i=0; i<20; i++) {images.push(library.kjendiser[i]);}
         break;
      
     }
@@ -150,11 +152,12 @@ var library = {
   function gameLogic(e) {
     // make sure the box is playable
     if (e.target.classList.contains("play")) {
+
       e.target.firstChild.classList.remove("hidden");
-      // first of two click
+      // Første av to klikk
       if (click < 1) {
         tempElt1 = e.target;
-        // timer
+        // Tid
         if (click === -1) {
           timer = setInterval(function() {
             time++;
@@ -164,11 +167,11 @@ var library = {
         click = 1;
       }
   
-      // second click, klikk nr 2//
+      // Klikk nr 2//
       else if (e.target !== tempElt1) {
         tempElt2 = e.target;
   
-        // different images, forskjellige bilder
+        // Forskjellige bilder
         if (tempElt1.firstChild.src !== tempElt2.firstChild.src) {
           mainElt.removeEventListener("click", gameLogic);
           setTimeout( function() {
@@ -182,7 +185,7 @@ var library = {
           scoreElt.innerHTML = score;
         }
   
-        // same images, samme bilde//
+        // Samme bilde//
         else {
           score += 10;
           win += 12;
@@ -192,7 +195,7 @@ var library = {
           tempElt2.classList.remove("play");
           scoreElt.innerHTML = score;
   
-          // game won, spill vunnet
+          // Spill vunnet
           if (win === 20) {
             clearTimeout(timer);
             finalElt.innerHTML = "You won " + score + " points <br> in " + time + " seconds ";
@@ -207,7 +210,7 @@ var library = {
   againElt.addEventListener("click", resetGame);
   
   function resetGame() {
-    // reset game, start spill på nytt//
+    // Start spill på nytt//
     tempElt1 = "";
     tempElt2 = "";
     click = -1;
