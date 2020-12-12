@@ -13,23 +13,24 @@
 /*3D-boksene*/
 .container{
 position: relative;
-width: 60em;
-margin-right: auto;
-margin-left: auto;
-margin-top: 15em;
+left: auto;
+right: auto;
+width: 50em;
+margin-right: -4em;
+margin-top: 25em;
+text-align: center;
 }
 
 .wrapper {
 	margin: 0 auto 3em auto;
 	height: auto;
-	max-width: 60em;
-	max-height: 86em;   
+	max-height: 86em; 
 }
 
 .clearfix:before,
 .clearfix:after {
     content: " ";
-    display: table;
+	display: table;
 }
 
 .clearfix:after {
@@ -43,32 +44,35 @@ margin-top: 15em;
 
 /*Aldersgrensene*/
 .rating{
-	color: white;
-	font-size: 1.5rem;
+	color: rgb(6, 6, 7);
+	font-size: 1rem;
+	padding: 0.2em;
   }
   
 /*Listen til de tre boksene*/
 .scene {
 	width: 16.25em;
 	height: 25em;
-	margin: 1.875em;
 	float: left;
 	-webkit-perspective: 62.5em;
 	-moz-perspective: 62.5em;
 	perspective: 42.5em;
+}
 
+.clearfix:focus{
+	width: 5em;
 }
 
 /*Navnene på de ulike spillene*/
 .poster{
 	color: white;
-	padding-left: 2.6em;
+	padding-left: 1em;
 	padding-top: 25em;
 	position: absolute;
 	transform: translate(50%,-50%);
 	text-transform: uppercase;
 	font-family: verdana;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	font-weight: 700;
 	
   }
@@ -76,7 +80,7 @@ margin-top: 15em;
 /* Str på de tre boksene når de snur på seg*/
 .movie {
 	width: 17.25em;
-	height: 25em;
+	height: 15em;
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	transform-style: preserve-3d;
@@ -89,17 +93,17 @@ margin-top: 15em;
 }
 
 .movie:hover {
-	-webkit-transform: rotateY(-78deg) translateZ(1.25em);
-	-moz-transform: rotateY(-78deg) translateZ(1.25em);
-	transform: rotateY(-78deg) translateZ(1.25em);
+	-webkit-transform: rotateY(-88deg) translateZ(3.7em);
+	-moz-transform: rotateY(-88deg) translateZ(3.7em);
+	transform: rotateY(-88deg) translateZ(3.7em);
 }
 
 /*Boksene når de er snudd*/
 .movie .poster, 
 .movie .info {
 	position: absolute;
-	width: 16.25rem;
-	height: 25rem;
+	width: 12.25rem;
+	height: 20rem;
 	background-color: #fff;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
@@ -119,17 +123,15 @@ margin-top: 15em;
 	-webkit-transform: rotateY(90deg) translateZ(8.125em);
 	-moz-transform: rotateY(90deg) translateZ(8.125em);
 	transform: rotateY(90deg) translateZ(8.125em);
-	border: 1px solid #B8B5B5;
-	font-size: 0.75rem;
+	border: 2px solid #1b2d4e;
+	font-size: 0.8rem;
 }
 
 .info p {
-	padding: 1.2em 1.4em;
-	margin: 2px 0 0;
+	padding: 0.2em 0.2em 0.2em 0.2em ;
 	font-weight: 700;
 	color: #666;
 	line-height: 1.4em;
-	border-top: 10px solid #555;
 }
 
 
@@ -146,8 +148,12 @@ margin-top: 15em;
 
 /*Boksen for aldersgrense*/
 .info header .rating {
-	border: 2px solid black;
-	padding: 0px 3px;
+	border: 2px solid rgb(40, 53, 95);
+	padding: -px 2px;
+	margin-top: 8.5em;
+	margin-bottom: 1em;
+	margin-left: 3.5em;
+	float: left;
 }
 
 
@@ -182,20 +188,36 @@ margin-top: 15em;
 
 /*Media Queries*/
 
-@media screen and (max-width: 60em){
+@media screen and (max-width: 48em){
 	.scene {
 		float: none;
-		margin: 1.875em auto 3.75em;
+		margin: -2em auto auto;
 	}
 }
-@media screen and (max-width: 60em){
+
+@media screen and (max-width: 48em){
 	.container {
 		float: none;
 		margin-top: 71em;
 		width: 100%;
-
 	}
 }
+@media screen and (max-width: 40em){
+	.movie {
+		width: 20em;
+		height: 12em;
+	}
+}
+
+@media screen and (max-width: 30em){
+	.wrapper {
+		padding-bottom: 10em;
+	}
+}
+*/
+
+
+
 
 
 

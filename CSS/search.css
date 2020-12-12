@@ -13,6 +13,7 @@
   margin: 1.25em;
   top: 2.5em;
   right: 3.2em;
+  padding-left: 30em;
   position: absolute;
   z-index: 1;
 }
@@ -62,5 +63,5 @@
 /*Lengde på inntastingsfeltet når du trykker på søke-ikonet*/
 .search > div > input:focus,
 .search > div > input:not(:placeholder-shown) {
-  width: 7.5em;
+  width: 6em;
 }
